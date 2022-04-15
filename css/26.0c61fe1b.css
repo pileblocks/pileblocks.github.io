@@ -1,0 +1,25 @@
+
+.field-part[data-v-303da82a] {
+    border-width: 1px;
+    border-color: var(--primary);
+    border-style: solid;
+}
+
+
+#field-parts-wrapper[data-v-bc3758dc] {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+@media (min-width: 576px) {
+#field-parts-wrapper[data-v-bc3758dc] {
+        /*justify-content: flex-start;*/
+}
+}
+.d-grid[data-v-bc3758dc] {
+    display: grid;
+}
+.season-slogan[data-v-bc3758dc] {
+ color: white;
+}
+

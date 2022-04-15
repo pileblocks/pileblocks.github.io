@@ -1,0 +1,32 @@
+
+.pb-tile[data-v-3d96c33f] {
+    width: 21px;
+    height: 21px;
+    background-color: rgb(254, 208, 73);
+    border: 1px solid var(--secondary);
+    line-height: 19px;
+    text-align: center;
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+.filled-tile[data-v-3d96c33f] {
+    color: transparent;
+    background-image: url(/img/tile-bg.ced1af8e.svg);
+    background-repeat: repeat;
+    background-position: center;
+}
+.filled-tile-light[data-v-3d96c33f] {
+    background-image: url(/img/tile-bg-light.9db78d3b.svg);
+}
+
+
+.fragment-number[data-v-4c02545d] {
+    color: #fefefe;
+}
+.pb-container[data-v-4c02545d] {
+    line-height: 0.7em;
+}
+
