@@ -13,10 +13,10 @@
 }
 
 
-.text-faded[data-v-928d7ad0] {
+.text-faded[data-v-4f10b184] {
     color: #aab0bc;
 }
-@-webkit-keyframes text-enlarge-data-v-928d7ad0 {
+@-webkit-keyframes text-enlarge-data-v-4f10b184 {
 0% {
         font-size: 16px;
         opacity: 1;
@@ -30,7 +30,7 @@
         left: -10px;
 }
 }
-@keyframes text-enlarge-data-v-928d7ad0 {
+@keyframes text-enlarge-data-v-4f10b184 {
 0% {
         font-size: 16px;
         opacity: 1;
@@ -44,49 +44,49 @@
         left: -10px;
 }
 }
-.reward-animation[data-v-928d7ad0] {
-    -webkit-animation-name: text-enlarge-data-v-928d7ad0;
-            animation-name: text-enlarge-data-v-928d7ad0;
+.reward-animation[data-v-4f10b184] {
+    -webkit-animation-name: text-enlarge-data-v-4f10b184;
+            animation-name: text-enlarge-data-v-4f10b184;
     -webkit-animation-duration: 1s;
             animation-duration: 1s;
 }
-.reward-base[data-v-928d7ad0] {
+.reward-base[data-v-4f10b184] {
     position: absolute;
     display: inline-block;
     top: 0;
     left: 0;
 }
-.reward-raise[data-v-928d7ad0] {
+.reward-raise[data-v-4f10b184] {
     color: var(--green);
 }
-.reward-decline[data-v-928d7ad0] {
+.reward-decline[data-v-4f10b184] {
     color: var(--danger);
 }
-.active[data-v-928d7ad0] {
+.active[data-v-4f10b184] {
     background-color: var(--primary);
 }
-.high-procent[data-v-928d7ad0] {
+.high-procent[data-v-4f10b184] {
     color: var(--green);
 }
-.low-procent[data-v-928d7ad0] {
+.low-procent[data-v-4f10b184] {
     color: var(--danger);
 }
-.medium-procent[data-v-928d7ad0] {
+.medium-procent[data-v-4f10b184] {
     color: var(--orange);
 }
-.gold-star[data-v-928d7ad0] {
+.gold-star[data-v-4f10b184] {
     color: var(--gray-dark)
 }
-.reward-grid[data-v-928d7ad0] {
+.reward-grid[data-v-4f10b184] {
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 5em 1fr;
 }
-.reward-label[data-v-928d7ad0] {
+.reward-label[data-v-4f10b184] {
     grid-column: 1;
     grid-row: 1;
 }
-.reward-value[data-v-928d7ad0] {
+.reward-value[data-v-4f10b184] {
     grid-column: 2;
     grid-row: 1;
 }
