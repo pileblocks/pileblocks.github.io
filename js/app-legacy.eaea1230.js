@@ -13,6 +13,7 @@
 /* harmony export */   "_H": function() { return /* binding */ TOKEN_ROOT_ADDRESS; },
 /* harmony export */   "h_": function() { return /* binding */ LOADING_STATUS_NO_PERMISSIONS; },
 /* harmony export */   "je": function() { return /* binding */ GENESIS_ADDRESS; },
+/* harmony export */   "jl": function() { return /* binding */ CALC_ADDRESS; },
 /* harmony export */   "rb": function() { return /* binding */ HOST_ADDRESS; },
 /* harmony export */   "rr": function() { return /* binding */ LOADING_STATUS_PROVIDER_NOT_LOADED; },
 /* harmony export */   "u2": function() { return /* binding */ SELF_PUT_OFFSET; }
@@ -22,11 +23,78 @@ const GENESIS_ADDRESS = "0:f2ff16460f846733744e017c598cd62454e7071f3bd788f912566
 const TOKEN_ROOT_ADDRESS = "0:dbba0028173f5b8d09eb597e0cca88cb41a4875efdf8a1815bb31292f150f800";
 const SALE_TOKEN = "0:4ff60d4428f7c4fb04ab3b02e1be16ca20fe459003ce78b416ce6fb18b9b1374";
 const HOST_ADDRESS = "0:bcd0c13c727229d06a9f2e51ba73df318a184b27c252d6f740bef9c1d01e68ca";
+const CALC_ADDRESS = "0:2cefd03c6bb7e205ea0f152cd7f230979f0f0e996a0f4792d8fd695f431c9978";
 const LOADING_STATUS_PROVIDER_NOT_LOADED = 1;
 const LOADING_STATUS_PROVIDER_LOADED = 2;
 const LOADING_STATUS_NO_PERMISSIONS = 3;
 const LOADING_STATUS_GAME_PENDING = 4;
 const GAME_STATUS_COMPLETED = 3;
+
+/***/ }),
+
+/***/ 6448:
+/***/ (function(module) {
+
+const FarmingCalculatorContract = {
+  abi: {
+    "ABI version": 2,
+    "version": "2.2",
+    "header": ["time"],
+    "functions": [{
+      "name": "log_2",
+      "inputs": [{
+        "name": "x",
+        "type": "uint128"
+      }],
+      "outputs": [{
+        "name": "value0",
+        "type": "uint128"
+      }]
+    }, {
+      "name": "calcFarming",
+      "inputs": [{
+        "name": "time",
+        "type": "uint128"
+      }, {
+        "name": "tokenBalance",
+        "type": "uint128"
+      }],
+      "outputs": [{
+        "name": "farmValue",
+        "type": "uint128"
+      }]
+    }, {
+      "name": "constructor",
+      "inputs": [],
+      "outputs": []
+    }],
+    "data": [{
+      "key": 1,
+      "name": "_randomNonce",
+      "type": "uint64"
+    }],
+    "events": [],
+    "fields": [{
+      "name": "_pubkey",
+      "type": "uint256"
+    }, {
+      "name": "_timestamp",
+      "type": "uint64"
+    }, {
+      "name": "_constructorFlag",
+      "type": "bool"
+    }, {
+      "name": "_randomNonce",
+      "type": "uint64"
+    }]
+  },
+  tvc: "te6ccgECFAEAArEAAgE0AwEBAcACAEPQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgBCSK7VMg4wMgwP/jAiDA/uMC8gsRBQQTAoTtRNDXScMB+GYh2zzTAAGfgQIA1xgg+QFY+EL5EPKo3tM/AfhDIbnytCD4I4ED6KiCCBt3QKC58rT4Y9MfAds88jwIBgNK7UTQ10nDAfhmItDXCwOpOADcIccA4wIh1w0f8rwh4wMB2zzyPBAQBgM8IIIQTkcKfbrjAiCCEGQxTt264wIgghBotV8/uuMCCwoHAiIw+EJu4wD4RvJz0fgA2zzyAAgMAVztRNDXScIBjiNw7UTQ9AVxIYBA9A6T1ws/kXDi+GqAQPQO8r3XC//4YnD4Y+MNCQAm7UTQ0//TP9MAMdM/0fhq+GP4YgJ6MPhG8uBM03/R2zwhjigj0NMB+kAwMcjPhyDOjQQAAAAAAAAAAAAAAAAOQxTt2M8Wy3/JcPsAkTDi4wDyAA4MAn4w+Eby4EzTf9N/0ds8IY4oI9DTAfpAMDHIz4cgzo0EAAAAAAAAAAAAAAAADORwp9jPFst/yXD7AJEw4uMA8gANDAAk+Er4Q/hCyMv/yz/Pg8s/ye1UAl4hcViCEDuaygCpBaC1f9s8qLV/IYEcIKC1f6kEpxO1f3FYgQOEqQSgtX/bPKi1fw4OAfwgwgDy4GRwIYJxAAAAAAAAAAAAAAAAAAAAAL6aIat/MoEAgKC1f94hgjEAAAAAAAAAAL6YIas/MqZAtX/eIYIRAAAAAL6YIasfMqYgtX/eIYIBAAC+mCGrDzKmELV/3iGBAQC+mCGrBzKmCLV/3iHCD5ghqwMypgS1f94hwgMPACSYIasBMqYCtX/eAcIBk6S1f94ACvhG8uBMAgr0pCD0oRMSABRzb2wgMC41Ny4wAAA=",
+  code: "te6ccgECEQEAAoQABCSK7VMg4wMgwP/jAiDA/uMC8gsOAgEQAoTtRNDXScMB+GYh2zzTAAGfgQIA1xgg+QFY+EL5EPKo3tM/AfhDIbnytCD4I4ED6KiCCBt3QKC58rT4Y9MfAds88jwFAwNK7UTQ10nDAfhmItDXCwOpOADcIccA4wIh1w0f8rwh4wMB2zzyPA0NAwM8IIIQTkcKfbrjAiCCEGQxTt264wIgghBotV8/uuMCCAcEAiIw+EJu4wD4RvJz0fgA2zzyAAUJAVztRNDXScIBjiNw7UTQ9AVxIYBA9A6T1ws/kXDi+GqAQPQO8r3XC//4YnD4Y+MNBgAm7UTQ0//TP9MAMdM/0fhq+GP4YgJ6MPhG8uBM03/R2zwhjigj0NMB+kAwMcjPhyDOjQQAAAAAAAAAAAAAAAAOQxTt2M8Wy3/JcPsAkTDi4wDyAAsJAn4w+Eby4EzTf9N/0ds8IY4oI9DTAfpAMDHIz4cgzo0EAAAAAAAAAAAAAAAADORwp9jPFst/yXD7AJEw4uMA8gAKCQAk+Er4Q/hCyMv/yz/Pg8s/ye1UAl4hcViCEDuaygCpBaC1f9s8qLV/IYEcIKC1f6kEpxO1f3FYgQOEqQSgtX/bPKi1fwsLAfwgwgDy4GRwIYJxAAAAAAAAAAAAAAAAAAAAAL6aIat/MoEAgKC1f94hgjEAAAAAAAAAAL6YIas/MqZAtX/eIYIRAAAAAL6YIasfMqYgtX/eIYIBAAC+mCGrDzKmELV/3iGBAQC+mCGrBzKmCLV/3iHCD5ghqwMypgS1f94hwgMMACSYIasBMqYCtX/eAcIBk6S1f94ACvhG8uBMAgr0pCD0oRAPABRzb2wgMC41Ny4wAAA=",
+  codeHash: "c5e0809a27685f11f3d20ad1f30ebf4bd23f9a30e98d630758d3cca6dc4e246f"
+};
+module.exports = {
+  FarmingCalculatorContract
+};
 
 /***/ }),
 
@@ -1429,7 +1497,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 5505:
+/***/ 8055:
 /***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1443,9 +1511,9 @@ var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _
 
 ;// CONCATENATED MODULE: ./src/App.vue?vue&type=template&id=c8635de8&
 
-;// CONCATENATED MODULE: ../node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7a05bb75-vue-loader-template"}!./node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??vue-loader-options!../node_modules/cache-loader/dist/cjs.js??ruleSet[0].rules[0].use[0]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/components/BottomMenu.vue?vue&type=template&id=7ca51c51&scoped=true&
-var BottomMenuvue_type_template_id_7ca51c51_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"bottom-menu"}},[(_vm.isBalancePositive && !_vm.isGameCompleted)?_c('div',{attrs:{"id":"pile-colors"}},_vm._l((5),function(item){return _c('div',{key:item},[_c('bottom-menu-color',{attrs:{"btn-color":item}})],1)}),0):_vm._e(),(_vm.isBalancePositive && !_vm.isGameCompleted)?_c('div',{attrs:{"id":"claim-tiles"}},[(!_vm.tilesArePut)?_c('div',[_c('b-button',{attrs:{"size":"lg","variant":"primary"},on:{"click":_vm.claimTiles}},[_c('span',{directives:[{name:"show",rawName:"v-show",value:(!_vm.isLoading),expression:"!isLoading"}]},[_vm._v("Claim "),_c('small',[_vm._v(_vm._s(this.$store.state.PlayerInfo.claimableTiles))])]),_c('b-spinner',{directives:[{name:"show",rawName:"v-show",value:(_vm.isLoading),expression:"isLoading"}]})],1)],1):_vm._e(),(_vm.tilesArePut && !_vm.isMainScreen)?_c('div',{staticClass:"d-flex flex-column mt-1"},[_c('b-button',{attrs:{"size":"lg","variant":"primary"},on:{"click":_vm.putTiles}},[_c('span',{directives:[{name:"show",rawName:"v-show",value:(!_vm.isLoading),expression:"!isLoading"}]},[_vm._v("Put "),_c('small',[_vm._v(_vm._s(this.$store.state.Game.tilesToPut.length))])]),_c('b-spinner',{directives:[{name:"show",rawName:"v-show",value:(_vm.isLoading),expression:"isLoading"}]})],1),_c('b-button',{directives:[{name:"show",rawName:"v-show",value:(!_vm.isLoading),expression:"!isLoading"}],staticClass:"mt-1",attrs:{"size":"sm","variant":"secondary"},on:{"click":_vm.cancelPut}},[_vm._v("Cancel "),_c('i',{staticClass:"bi bi-x-circle"})])],1):_vm._e()]):_vm._e(),(_vm.isGameCompleted)?_c('div',{staticClass:"claim-reward"},[_c('b-button',{directives:[{name:"show",rawName:"v-show",value:(!_vm.isReceived),expression:"!isReceived"}],attrs:{"size":"lg","variant":"primary"},on:{"click":_vm.claimReward}},[_c('span',{directives:[{name:"show",rawName:"v-show",value:(!_vm.isLoading),expression:"!isLoading"}]},[_vm._v("Get Reward "),_c('small',[_vm._v(_vm._s(_vm._f("fixed")(this.$store.getters["Game/getReward"])))])]),_c('b-spinner',{directives:[{name:"show",rawName:"v-show",value:(_vm.isLoading),expression:"isLoading"}]})],1)],1):_vm._e()])}
-var BottomMenuvue_type_template_id_7ca51c51_scoped_true_staticRenderFns = []
+;// CONCATENATED MODULE: ../node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7a05bb75-vue-loader-template"}!./node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??vue-loader-options!../node_modules/cache-loader/dist/cjs.js??ruleSet[0].rules[0].use[0]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/components/BottomMenu.vue?vue&type=template&id=3658c082&scoped=true&
+var BottomMenuvue_type_template_id_3658c082_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"bottom-menu"}},[(_vm.isBalancePositive && !_vm.isGameCompleted)?_c('div',{attrs:{"id":"pile-colors"}},_vm._l((5),function(item){return _c('div',{key:item},[_c('bottom-menu-color',{attrs:{"btn-color":item}})],1)}),0):_vm._e(),(_vm.isBalancePositive && !_vm.isGameCompleted)?_c('div',{attrs:{"id":"claim-tiles"}},[(!_vm.tilesArePut)?_c('div',[_c('b-button',{attrs:{"size":"lg","variant":"primary"},on:{"click":_vm.claimTiles}},[_c('span',{directives:[{name:"show",rawName:"v-show",value:(!_vm.isLoading),expression:"!isLoading"}]},[_vm._v("Claim "),_c('small',[_vm._v(_vm._s(this.$store.state.PlayerInfo.claimableTiles))])]),_c('b-spinner',{directives:[{name:"show",rawName:"v-show",value:(_vm.isLoading),expression:"isLoading"}]})],1)],1):_vm._e(),(_vm.tilesArePut && !_vm.isMainScreen)?_c('div',{staticClass:"d-flex flex-column mt-1"},[_c('b-button',{attrs:{"size":"lg","variant":"primary"},on:{"click":_vm.putTiles}},[_c('span',{directives:[{name:"show",rawName:"v-show",value:(!_vm.isLoading),expression:"!isLoading"}]},[_vm._v("Put "),_c('small',[_vm._v(_vm._s(this.$store.state.Game.tilesToPut.length))])]),_c('b-spinner',{directives:[{name:"show",rawName:"v-show",value:(_vm.isLoading),expression:"isLoading"}]})],1),_c('b-button',{directives:[{name:"show",rawName:"v-show",value:(!_vm.isLoading),expression:"!isLoading"}],staticClass:"mt-1",attrs:{"size":"sm","variant":"secondary"},on:{"click":_vm.cancelPut}},[_vm._v("Cancel "),_c('i',{staticClass:"bi bi-x-circle"})])],1):_vm._e()]):_vm._e(),(_vm.isGameCompleted)?_c('div',{staticClass:"claim-reward"},[_c('b-button',{directives:[{name:"show",rawName:"v-show",value:(!_vm.isReceived & _vm.isInRoaster),expression:"!isReceived & isInRoaster"}],attrs:{"size":"lg","variant":"primary"},on:{"click":_vm.claimReward}},[_c('span',{directives:[{name:"show",rawName:"v-show",value:(!_vm.isLoading),expression:"!isLoading"}]},[_vm._v("Get Reward "),_c('small',[_vm._v(_vm._s(_vm._f("fixed")(this.$store.getters["Game/getReward"])))])]),_c('b-spinner',{directives:[{name:"show",rawName:"v-show",value:(_vm.isLoading),expression:"isLoading"}]})],1)],1):_vm._e()])}
+var BottomMenuvue_type_template_id_3658c082_scoped_true_staticRenderFns = []
 
 
 ;// CONCATENATED MODULE: ../node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7a05bb75-vue-loader-template"}!./node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??vue-loader-options!../node_modules/cache-loader/dist/cjs.js??ruleSet[0].rules[0].use[0]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/components/BottomMenuColor.vue?vue&type=template&id=627c8f4b&scoped=true&
@@ -1613,15 +1681,18 @@ var AppConst = __webpack_require__(8270);
     },
     isLoading: function () {
       return this.$store.state.Ever.operationInProgress;
+    },
+    isInRoaster: function () {
+      return this.$store.getters["Game/isInRoaster"];
     }
   }
 });
 ;// CONCATENATED MODULE: ./src/components/BottomMenu.vue?vue&type=script&lang=js&
  /* harmony default export */ var components_BottomMenuvue_type_script_lang_js_ = (BottomMenuvue_type_script_lang_js_); 
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-12[0].rules[0].use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!../node_modules/cache-loader/dist/cjs.js??ruleSet[0].rules[0].use[0]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/components/BottomMenu.vue?vue&type=style&index=0&id=7ca51c51&scoped=true&lang=css&
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-12[0].rules[0].use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!../node_modules/cache-loader/dist/cjs.js??ruleSet[0].rules[0].use[0]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/components/BottomMenu.vue?vue&type=style&index=0&id=3658c082&scoped=true&lang=css&
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/BottomMenu.vue?vue&type=style&index=0&id=7ca51c51&scoped=true&lang=css&
+;// CONCATENATED MODULE: ./src/components/BottomMenu.vue?vue&type=style&index=0&id=3658c082&scoped=true&lang=css&
 
 ;// CONCATENATED MODULE: ./src/components/BottomMenu.vue
 
@@ -1634,11 +1705,11 @@ var AppConst = __webpack_require__(8270);
 
 var BottomMenu_component = (0,componentNormalizer/* default */.Z)(
   components_BottomMenuvue_type_script_lang_js_,
-  BottomMenuvue_type_template_id_7ca51c51_scoped_true_render,
-  BottomMenuvue_type_template_id_7ca51c51_scoped_true_staticRenderFns,
+  BottomMenuvue_type_template_id_3658c082_scoped_true_render,
+  BottomMenuvue_type_template_id_3658c082_scoped_true_staticRenderFns,
   false,
   null,
-  "7ca51c51",
+  "3658c082",
   null
   
 )
@@ -1823,12 +1894,12 @@ var ToastManager_component = (0,componentNormalizer/* default */.Z)(
 )
 
 /* harmony default export */ var components_ToastManager = (ToastManager_component.exports);
-;// CONCATENATED MODULE: ../node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7a05bb75-vue-loader-template"}!./node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??vue-loader-options!../node_modules/cache-loader/dist/cjs.js??ruleSet[0].rules[0].use[0]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/components/TopMenu.vue?vue&type=template&id=4f10b184&scoped=true&
-var TopMenuvue_type_template_id_4f10b184_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('div',{attrs:{"id":"top-menu-logo"}},[_c('b-modal',{attrs:{"id":"standings-table","hide-footer":"","title":"Standings"}},[_c('b-container',{staticClass:"p-0",attrs:{"fluid":""}},[_c('b-row',[_c('b-col',{staticClass:"font-weight-bold",attrs:{"cols":"3"}},[_vm._v("Place")]),_c('b-col',{staticClass:"font-weight-bold",attrs:{"cols":"3"}},[_vm._v("Wallet")]),_c('b-col',{staticClass:"font-weight-bold",attrs:{"cols":"3"}},[_vm._v("Captured")]),_c('b-col',{staticClass:"font-weight-bold",attrs:{"cols":"3"}},[_vm._v("Reward")])],1),_vm._l((_vm.$store.state.Game.standings),function(player,index){return _c('b-row',{key:player.playerAddress,class:{active: _vm.isCurrentPlayer(player.playerAddress)}},[_c('b-col',{staticClass:"text-center"},[_vm._v(_vm._s(index + 1)+" ")]),_c('b-col',{staticClass:"text-left"},[_vm._v(_vm._s(_vm._f("short")(player.playerAddress)))]),_c('b-col',{staticClass:"text-center p-0"},[_vm._v(_vm._s(player.captured)+" "),_c('i',{directives:[{name:"show",rawName:"v-show",value:(player.isLast),expression:"player.isLast"}],staticClass:"bi bi-star-fill gold-star small"}),_c('i',{directives:[{name:"show",rawName:"v-show",value:(player.isPrelast),expression:"player.isPrelast"}],staticClass:"bi bi-star gold-star small"})]),_c('b-col',[_vm._v(_vm._s(_vm._f("fixed")(player.reward)))])],1)}),_c('b-row',[_c('b-col',{staticClass:"mt-2"},[(_vm.gameActive)?_c('p',{staticClass:"small"},[_c('b',[_vm._v("Note: ")]),_vm._v("Until the game is completed, rewards for the last (10%) and pre-last (5%) tiles are excluded from the calculation.")]):_vm._e(),(!_vm.gameActive)?_c('p',{staticClass:"small"},[_c('i',{staticClass:"bi bi-star-fill gold-star"}),_vm._v(" = Player claimed the last tile"),_c('br'),_c('i',{staticClass:"bi bi-star gold-star"}),_vm._v(" = Player claimed the pre-last tile ")]):_vm._e()])],1)],2)],1),_c('b-modal',{attrs:{"id":"sale-token","hide-footer":"","title":"Get PILE Tokens!"}},[_c('p',[_vm._v("To get PILE tokens, simply send EVERs to the following address (minimum: 1 EVER)."),_c('br')]),_c('b-input-group',{scopedSlots:_vm._u([{key:"append",fn:function(){return [_c('b-button',{attrs:{"variant":"primary"},on:{"click":_vm.copyAddress}},[_vm._v("Copy")])]},proxy:true}])},[_c('b-form-input',{ref:"tsAddress",attrs:{"value":_vm.saleTokenAddress,"readonly":""},on:{"focus":function($event){return $event.target.select()}}})],1),_c('p',{staticClass:"mt-3"},[_vm._v("You will receive "),_c('b',[_vm._v("X5")]),_vm._v(" PILE tokens. For example, if you send 10 EVER, you will receive 50 PILE. The exchange is automatic, so it won't take longer than 1 minute.")]),_c('p',[_c('b',[_vm._v("NOTE:")]),_vm._v(" The more PILE you have, the "),_c('b',[_vm._v("quicker")]),_vm._v(" you'll farm colored tiles.")])],1),_c('img',{staticClass:"logo-img",attrs:{"src":__webpack_require__(9574),"alt":"PileBlocks"}})],1),_c('div',{attrs:{"id":"top-menu-player-info"}},[_c('p',{staticClass:"mb-0"},[_c('span',{staticClass:"text-faded"},[_vm._v("Balance: ")]),_c('fancy-number',{attrs:{"value":this.$store.getters["PlayerInfo/getBalance"]}}),_c('i',{staticClass:"bi bi-cart-check-fill color-primary pl-1",on:{"click":function($event){return _vm.$bvModal.show('sale-token')}}})],1),_c('div',{staticClass:"reward-grid"},[_vm._m(0),_c('div',{staticClass:"reward-value"},[_c('div',{staticClass:"d-inline-block position-absolute"},[_c('fancy-number',{attrs:{"value":this.$store.getters["Game/getReward"]}}),_vm._v(" ("),_c('span',{class:_vm.rewardProcentClass()},[_vm._v(_vm._s(_vm.rewardProcent)+"%")]),_vm._v(") "),_c('div',{class:_vm.setAnimationClass},[_vm._v(_vm._s(_vm.animatedReward))])],1)])])]),_c('div',{attrs:{"id":"top-menu-game-stats"}},[_c('b-button',{attrs:{"size":"sm","variant":"primary"},on:{"click":function($event){return _vm.$bvModal.show('standings-table')}}},[_c('i',{staticClass:"bi bi-person-lines-fill"}),_vm._v(" "+_vm._s(_vm.$store.state.Game.standings.length)+" ")])],1),_c('div',{attrs:{"id":"top-menu-game-reload"}},[_c('b-button',{attrs:{"size":"sm","variant":"primary","disabled":_vm.isOpInProgress},on:{"click":_vm.reloadGame}},[_c('i',{directives:[{name:"show",rawName:"v-show",value:(!_vm.isLoading),expression:"!isLoading"}],staticClass:"bi bi-arrow-clockwise"}),_c('b-spinner',{directives:[{name:"show",rawName:"v-show",value:(_vm.isLoading),expression:"isLoading"}],attrs:{"small":""}})],1)],1)])}
-var TopMenuvue_type_template_id_4f10b184_scoped_true_staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"reward-label"},[_c('span',{staticClass:"text-faded pr-1"},[_vm._v("Your Reward: ")])])}]
+;// CONCATENATED MODULE: ../node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7a05bb75-vue-loader-template"}!./node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??vue-loader-options!../node_modules/cache-loader/dist/cjs.js??ruleSet[0].rules[0].use[0]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/components/TopMenu.vue?vue&type=template&id=b1d6ff74&scoped=true&
+var TopMenuvue_type_template_id_b1d6ff74_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('div',{attrs:{"id":"top-menu-logo"}},[_c('b-modal',{attrs:{"id":"standings-table","hide-footer":"","title":"Standings"}},[_c('b-container',{staticClass:"p-0",attrs:{"fluid":""}},[_c('b-row',[_c('b-col',{staticClass:"font-weight-bold",attrs:{"cols":"3"}},[_vm._v("Place")]),_c('b-col',{staticClass:"font-weight-bold",attrs:{"cols":"3"}},[_vm._v("Wallet")]),_c('b-col',{staticClass:"font-weight-bold",attrs:{"cols":"3"}},[_vm._v("Captured")]),_c('b-col',{staticClass:"font-weight-bold",attrs:{"cols":"3"}},[_vm._v("Reward")])],1),_vm._l((_vm.$store.state.Game.standings),function(player,index){return _c('b-row',{key:player.playerAddress,class:{active: _vm.isCurrentPlayer(player.playerAddress)}},[_c('b-col',{staticClass:"text-center"},[_vm._v(_vm._s(index + 1)+" ")]),_c('b-col',{staticClass:"text-left"},[_vm._v(_vm._s(_vm._f("short")(player.playerAddress)))]),_c('b-col',{staticClass:"text-center p-0"},[_vm._v(_vm._s(player.captured)+" "),_c('i',{directives:[{name:"show",rawName:"v-show",value:(player.isLast),expression:"player.isLast"}],staticClass:"bi bi-star-fill gold-star small"}),_c('i',{directives:[{name:"show",rawName:"v-show",value:(player.isPrelast),expression:"player.isPrelast"}],staticClass:"bi bi-star gold-star small"})]),_c('b-col',[_vm._v(_vm._s(_vm._f("fixed")(player.reward)))])],1)}),_c('b-row',[_c('b-col',{staticClass:"mt-2"},[(_vm.gameActive)?_c('p',{staticClass:"small"},[_c('b',[_vm._v("Note: ")]),_vm._v("Until the game is completed, rewards for the last (10%) and pre-last (5%) tiles are excluded from the calculation.")]):_vm._e(),(!_vm.gameActive)?_c('p',{staticClass:"small"},[_c('i',{staticClass:"bi bi-star-fill gold-star"}),_vm._v(" = Player claimed the last tile"),_c('br'),_c('i',{staticClass:"bi bi-star gold-star"}),_vm._v(" = Player claimed the pre-last tile ")]):_vm._e()])],1)],2)],1),_c('b-modal',{attrs:{"id":"sale-token","hide-footer":"","title":"Get PILE Tokens!"}},[_c('p',[_vm._v("To get PILE tokens, simply send EVERs to the following address (minimum: 1 EVER)."),_c('br')]),_c('b-input-group',{scopedSlots:_vm._u([{key:"append",fn:function(){return [_c('b-button',{attrs:{"variant":"primary"},on:{"click":_vm.copyAddress}},[_vm._v("Copy")])]},proxy:true}])},[_c('b-form-input',{ref:"tsAddress",attrs:{"value":_vm.saleTokenAddress,"readonly":""},on:{"focus":function($event){return $event.target.select()}}})],1),_c('p',{staticClass:"mt-3"},[_vm._v("Your connected wallet is: "),_c('b',[_vm._v(_vm._s(_vm._f("short")(_vm.$store.state.PlayerInfo.playerAddress)))]),_c('br'),_vm._v("Send money only from this wallet!")]),_c('p',{staticClass:"mt-1"},[_vm._v("You will receive "),_c('b',[_vm._v("X5")]),_vm._v(" PILE tokens. For example, if you send 10 EVER, you will receive 50 PILE. The exchange is automatic.")]),_c('p',[_c('b',[_vm._v("Farming Calculator")])]),_c('p',[_vm._v("Use this calculator to approximate how many PILE to buy to have the expected amount of tiles farmed.")]),_c('b-input-group',{attrs:{"prepend":"After this time (in min):","size":"sm"}},[_c('b-form-input',{attrs:{"placeholder":"Time in minutes"},model:{value:(_vm.farmingTime),callback:function ($$v) {_vm.farmingTime=$$v},expression:"farmingTime"}})],1),_c('b-input-group',{attrs:{"size":"sm","prepend":"If your balance is (PILE):"}},[_c('b-form-input',{attrs:{"placeholder":"Your balance","size":"sm"},model:{value:(_vm.farmingBalance),callback:function ($$v) {_vm.farmingBalance=$$v},expression:"farmingBalance"}}),_c('b-input-group-append',[_c('b-button',{on:{"click":_vm.calcFarming}},[_vm._v("Calculate")])],1)],1),_c('p',[_vm._v("You'll farm: "),_c('b',[_vm._v(_vm._s(_vm.farmingResult))]),_vm._v(" tiles")])],1),_c('img',{staticClass:"logo-img",attrs:{"src":__webpack_require__(9574),"alt":"PileBlocks"}})],1),_c('div',{attrs:{"id":"top-menu-player-info"}},[_c('p',{staticClass:"mb-0"},[_c('span',{staticClass:"text-faded"},[_vm._v("Balance: ")]),_c('fancy-number',{attrs:{"value":this.$store.getters["PlayerInfo/getBalance"]}}),_c('i',{staticClass:"bi bi-cart-check-fill color-primary pl-1",on:{"click":function($event){return _vm.$bvModal.show('sale-token')}}})],1),_c('div',{staticClass:"reward-grid"},[_vm._m(0),_c('div',{staticClass:"reward-value"},[_c('div',{staticClass:"d-inline-block position-absolute"},[_c('fancy-number',{attrs:{"value":this.$store.getters["Game/getReward"]}}),_vm._v(" ("),_c('span',{class:_vm.rewardProcentClass()},[_vm._v(_vm._s(_vm.rewardProcent)+"%")]),_vm._v(") "),_c('div',{class:_vm.setAnimationClass},[_vm._v(_vm._s(_vm.animatedReward))])],1)])])]),_c('div',{attrs:{"id":"top-menu-game-stats"}},[_c('b-button',{attrs:{"size":"sm","variant":"primary"},on:{"click":function($event){return _vm.$bvModal.show('standings-table')}}},[_c('i',{staticClass:"bi bi-person-lines-fill"}),_vm._v(" "+_vm._s(_vm.$store.state.Game.standings.length)+" ")])],1),_c('div',{attrs:{"id":"top-menu-game-reload"}},[_c('b-button',{attrs:{"size":"sm","variant":"primary","disabled":_vm.isOpInProgress},on:{"click":_vm.reloadGame}},[_c('i',{directives:[{name:"show",rawName:"v-show",value:(!_vm.isLoading),expression:"!isLoading"}],staticClass:"bi bi-arrow-clockwise"}),_c('b-spinner',{directives:[{name:"show",rawName:"v-show",value:(_vm.isLoading),expression:"isLoading"}],attrs:{"small":""}})],1)],1)])}
+var TopMenuvue_type_template_id_b1d6ff74_scoped_true_staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"reward-label"},[_c('span',{staticClass:"text-faded pr-1"},[_vm._v("Your Reward: ")])])}]
 
 
-;// CONCATENATED MODULE: ./src/components/TopMenu.vue?vue&type=template&id=4f10b184&scoped=true&
+;// CONCATENATED MODULE: ./src/components/TopMenu.vue?vue&type=template&id=b1d6ff74&scoped=true&
 
 // EXTERNAL MODULE: ./node_modules/bignumber.js/bignumber.js
 var bignumber = __webpack_require__(4431);
@@ -1897,7 +1968,10 @@ var FancyNumber_component = (0,componentNormalizer/* default */.Z)(
       animatedReward: "",
       setAnimationClass: "reward-base ",
       isLoading: false,
-      saleTokenAddress: AppConst/* SALE_TOKEN */.G
+      saleTokenAddress: AppConst/* SALE_TOKEN */.G,
+      farmingTime: 0,
+      farmingBalance: 0,
+      farmingResult: 0
     };
   },
   methods: {
@@ -1940,6 +2014,9 @@ var FancyNumber_component = (0,componentNormalizer/* default */.Z)(
     copyAddress: function () {
       this.$refs.tsAddress.focus();
       document.execCommand('copy');
+    },
+    calcFarming: async function () {
+      this.farmingResult = await this.$store.getters["Ever/calcFarming"](this.farmingTime * 60, this.farmingBalance * 1e9);
     }
   },
   watch: {
@@ -1975,10 +2052,10 @@ var FancyNumber_component = (0,componentNormalizer/* default */.Z)(
 });
 ;// CONCATENATED MODULE: ./src/components/TopMenu.vue?vue&type=script&lang=js&
  /* harmony default export */ var components_TopMenuvue_type_script_lang_js_ = (TopMenuvue_type_script_lang_js_); 
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-12[0].rules[0].use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!../node_modules/cache-loader/dist/cjs.js??ruleSet[0].rules[0].use[0]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/components/TopMenu.vue?vue&type=style&index=0&id=4f10b184&scoped=true&lang=css&
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-12[0].rules[0].use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[1]!./node_modules/@vue/vue-loader-v15/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12[0].rules[0].use[2]!../node_modules/cache-loader/dist/cjs.js??ruleSet[0].rules[0].use[0]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/components/TopMenu.vue?vue&type=style&index=0&id=b1d6ff74&scoped=true&lang=css&
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/TopMenu.vue?vue&type=style&index=0&id=4f10b184&scoped=true&lang=css&
+;// CONCATENATED MODULE: ./src/components/TopMenu.vue?vue&type=style&index=0&id=b1d6ff74&scoped=true&lang=css&
 
 ;// CONCATENATED MODULE: ./src/components/TopMenu.vue
 
@@ -1991,19 +2068,19 @@ var FancyNumber_component = (0,componentNormalizer/* default */.Z)(
 
 var TopMenu_component = (0,componentNormalizer/* default */.Z)(
   components_TopMenuvue_type_script_lang_js_,
-  TopMenuvue_type_template_id_4f10b184_scoped_true_render,
-  TopMenuvue_type_template_id_4f10b184_scoped_true_staticRenderFns,
+  TopMenuvue_type_template_id_b1d6ff74_scoped_true_render,
+  TopMenuvue_type_template_id_b1d6ff74_scoped_true_staticRenderFns,
   false,
   null,
-  "4f10b184",
+  "b1d6ff74",
   null
   
 )
 
 /* harmony default export */ var TopMenu = (TopMenu_component.exports);
-;// CONCATENATED MODULE: ../node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7a05bb75-vue-loader-template"}!./node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??vue-loader-options!../node_modules/cache-loader/dist/cjs.js??ruleSet[0].rules[0].use[0]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/components/EverLoader.vue?vue&type=template&id=0a75a006&scoped=true&
-var EverLoadervue_type_template_id_0a75a006_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div')}
-var EverLoadervue_type_template_id_0a75a006_scoped_true_staticRenderFns = []
+;// CONCATENATED MODULE: ../node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7a05bb75-vue-loader-template"}!./node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??vue-loader-options!../node_modules/cache-loader/dist/cjs.js??ruleSet[0].rules[0].use[0]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/components/EverLoader.vue?vue&type=template&id=262446ae&scoped=true&
+var EverLoadervue_type_template_id_262446ae_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div')}
+var EverLoadervue_type_template_id_262446ae_scoped_true_staticRenderFns = []
 
 
 // EXTERNAL MODULE: ./node_modules/everscale-inpage-provider/dist/index.js
@@ -2043,6 +2120,15 @@ const EverAPI = {
         walletOwner: playerAddress
       }).call();
       return result.value0.toString();
+    }
+  },
+  calc: {
+    calcFarming: async function (calcContract, time, tokenBalance) {
+      const result = await calcContract.methods.calcFarming({
+        time: time,
+        tokenBalance: tokenBalance
+      }).call();
+      return parseInt(result.farmValue);
     }
   },
   host: {
@@ -2167,7 +2253,10 @@ function _dataToNumbers(rawData, newData) {
     newData[packedFragment[0]] = packedFragment[1];
   }
 }
+// EXTERNAL MODULE: ./src/contract_wrappers/FarmingCalculator.js
+var FarmingCalculator = __webpack_require__(6448);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40[0].rules[0].use[1]!../node_modules/cache-loader/dist/cjs.js??ruleSet[0].rules[0].use[0]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/components/EverLoader.vue?vue&type=script&lang=js&
+
 
 
 
@@ -2209,6 +2298,11 @@ function _dataToNumbers(rawData, newData) {
       const hostAddress = new dist.Address(AppConst/* HOST_ADDRESS */.rb);
       const host = new ever.Contract(GameHost.GameHostContract.abi, hostAddress);
       this.$store.commit("Ever/updateHost", host);
+    },
+    initCalc: function (ever) {
+      const calcAddress = new dist.Address(AppConst/* CALC_ADDRESS */.jl);
+      const calc = new ever.Contract(FarmingCalculator.FarmingCalculatorContract.abi, calcAddress);
+      this.$store.commit("Ever/updateCalc", calc);
     },
     initGame: async function (ever) {
       let host = this.$store.state.Ever.host;
@@ -2298,7 +2392,7 @@ function _dataToNumbers(rawData, newData) {
       let sheet = document.createElement('style');
 
       for (let i = 0; i < 5; i++) {
-        let color = parseInt(renderConfig[i + 4]).toString(16);
+        let color = parseInt(renderConfig[i + 4]).toString(16).padStart(6, '0');
         if (i === 0) sheet.innerHTML += `.color-${i + 1} {background-color: #${color} !important; color: #1e2228} `;else sheet.innerHTML += `.color-${i + 1} {background-color: #${color} !important; color: #fefefe} `;
       }
 
@@ -2357,6 +2451,7 @@ function _dataToNumbers(rawData, newData) {
 
     this.initTokenRoot(ever);
     this.initHost(ever);
+    this.initCalc(ever);
     await this.initGame(ever);
     await this.initSubscription(ever);
     const gameInfo = await EverAPI.game.getGameInfo(this.$store.state.Ever.game);
@@ -2394,11 +2489,11 @@ function _dataToNumbers(rawData, newData) {
 ;
 var EverLoader_component = (0,componentNormalizer/* default */.Z)(
   components_EverLoadervue_type_script_lang_js_,
-  EverLoadervue_type_template_id_0a75a006_scoped_true_render,
-  EverLoadervue_type_template_id_0a75a006_scoped_true_staticRenderFns,
+  EverLoadervue_type_template_id_262446ae_scoped_true_render,
+  EverLoadervue_type_template_id_262446ae_scoped_true_staticRenderFns,
   false,
   null,
-  "0a75a006",
+  "262446ae",
   null
   
 )
@@ -2667,8 +2762,7 @@ const Game = {
     name: "",
     cachedReward: 0,
     status: 1,
-    gameStartTime: 0 //   field: {'0': [[4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [4, 4, 4, 4, 1, 1, 3, 3, 1, 1, 1, 3, 3, 3, 1, 3], [4, 4, 4, 1, 1, 1, 3, 1, 3, 1, 1, 3, 1, 3, 1, 1], [4, 1, 1, 1, 1, 1, 5, 3, 1, 1, 5, 3, 3, 3, 1, 1], [4, 1, 1, 1, 1, 1, 3, 1, 3, 1, 3, 1, 1, 3, 1, 1], [4, 1, 1, 1, 1, 1, 3, 1, 3, 1, 3, 1, 1, 3, 1, 3], [4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]], '1': [[1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1], [1, 1, 1, 1, 1, 1, 1, 2, 1, 5, 5, 1, 1, 1, 1, 1], [1, 1, 2, 1, 1, 1, 1, 2, 1, 5, 1, 4, 1, 1, 1, 1], [1, 1, 1, 1, 1, 2, 1, 2, 1, 5, 1, 4, 2, 2, 2, 2], [1, 1, 1, 1, 1, 1, 1, 2, 1, 5, 5, 4, 2, 2, 2, 2], [1, 1, 2, 1, 2, 1, 1, 2, 2, 5, 1, 4, 2, 2, 2, 2], [1, 1, 1, 1, 1, 1, 1, 1, 2, 5, 1, 4, 2, 2, 2, 2], [1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 5, 5, 2, 2, 2, 2]], '2': [[1, 1, 2, 1, 1, 3, 1, 1, 1, 2, 5, 5, 4, 2, 2, 2], [1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 5, 4, 2, 2, 2], [1, 1, 1, 1, 1, 2, 1, 3, 1, 2, 2, 5, 4, 2, 2, 2], [1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 2, 5, 5, 5, 2, 5], [1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 5, 4, 5], [1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 5, 5, 5], [4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 5, 5, 5], [4, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 5, 5]], '3': [[4, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 5, 5], [4, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 3, 1, 2, 5, 5], [4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 4, 1], [4, 4, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5], [4, 4, 4, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 2, 1, 1], [4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2], [4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1]], '4': [[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 5], [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 2, 2, 2, 4, 5], [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 3, 5, 5, 4, 5], [2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 5], [2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 4, 4], [2, 2, 2, 3, 4, 5, 3, 5, 5, 5, 5, 5, 5, 5, 4, 4], [2, 2, 2, 5, 3, 5, 5, 3, 1, 1, 4, 1, 5, 5, 4, 4], [2, 2, 4, 5, 5, 5, 1, 5, 1, 5, 1, 1, 5, 1, 5, 4]], '5': [[2, 2, 2, 5, 5, 5, 5, 4, 3, 4, 5, 5, 5, 1, 4, 5], [2, 2, 2, 5, 5, 4, 5, 4, 4, 5, 5, 5, 4, 1, 5, 4], [2, 2, 4, 4, 5, 3, 5, 5, 4, 3, 5, 3, 4, 5, 4, 5], [2, 2, 5, 4, 4, 4, 4, 5, 3, 4, 4, 5, 4, 3, 3, 5], [2, 3, 5, 2, 1, 1, 1, 1, 3, 5, 5, 5, 3, 5, 5, 4], [2, 4, 5, 1, 1, 1, 1, 1, 1, 2, 5, 5, 5, 4, 4, 5], [2, 4, 2, 1, 1, 1, 1, 1, 1, 3, 4, 5, 4, 4, 4, 5], [2, 5, 1, 1, 1, 1, 1, 1, 1, 4, 5, 4, 5, 5, 4, 4]], '6': [[2, 3, 4, 1, 1, 1, 1, 3, 3, 4, 3, 4, 5, 4, 3, 3], [2, 3, 4, 1, 1, 5, 5, 5, 4, 5, 2, 2, 4, 3, 5, 5], [2, 4, 3, 4, 1, 4, 4, 4, 4, 5, 5, 4, 1, 2, 5, 4], [2, 5, 5, 3, 1, 1, 3, 4, 5, 4, 4, 2, 4, 1, 5, 4], [2, 1, 3, 1, 1, 1, 1, 4, 4, 5, 2, 1, 4, 1, 5, 3], [2, 1, 1, 1, 1, 1, 1, 1, 3, 1, 5, 5, 4, 1, 5, 5], [2, 1, 3, 1, 1, 1, 1, 1, 3, 1, 2, 1, 5, 3, 5, 4], [2, 1, 4, 3, 1, 1, 1, 1, 3, 1, 1, 1, 1, 4, 4, 4]], '7': [[2, 2, 3, 3, 3, 2, 1, 1, 3, 1, 1, 1, 1, 5, 4, 5], [2, 2, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 3, 4, 4, 5], [2, 2, 1, 3, 3, 1, 1, 1, 1, 1, 1, 3, 3, 4, 3, 5], [2, 2, 2, 3, 3, 4, 3, 1, 1, 1, 1, 3, 3, 4, 5, 5], [2, 2, 2, 3, 4, 5, 1, 1, 1, 1, 3, 4, 3, 4, 4, 5], [2, 2, 2, 1, 1, 1, 1, 1, 3, 3, 3, 5, 4, 4, 4, 5], [2, 2, 2, 1, 1, 1, 1, 3, 2, 5, 4, 4, 4, 4, 3, 5], [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 4, 3, 4, 5, 5]], '8': [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4], [3, 3, 3, 1, 1, 3, 1, 1, 3, 3, 1, 1, 1, 4, 4, 4], [1, 3, 1, 1, 3, 1, 3, 1, 3, 1, 3, 1, 1, 1, 4, 4], [3, 1, 1, 1, 3, 1, 3, 1, 3, 3, 1, 1, 1, 1, 1, 4], [3, 1, 1, 1, 3, 1, 3, 1, 3, 1, 3, 1, 1, 1, 1, 4], [3, 3, 3, 1, 1, 3, 1, 1, 3, 1, 3, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1]], '9': [[1, 1, 2, 1, 1, 1, 5, 5, 5, 5, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 5, 5, 1, 5, 5, 5, 1, 1, 2, 1, 1], [1, 1, 1, 1, 5, 5, 5, 1, 5, 5, 5, 1, 1, 1, 1, 1], [2, 2, 2, 2, 5, 5, 5, 5, 5, 5, 5, 2, 1, 1, 2, 1], [2, 2, 2, 5, 5, 5, 5, 5, 5, 2, 2, 2, 1, 1, 1, 1], [2, 2, 2, 5, 5, 4, 4, 4, 2, 2, 2, 1, 1, 1, 1, 1], [2, 2, 5, 5, 4, 4, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1], [2, 4, 5, 4, 4, 2, 2, 2, 2, 1, 1, 3, 1, 2, 1, 1]], '10': [[2, 5, 5, 4, 5, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1], [5, 5, 4, 4, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 3, 1], [5, 5, 4, 2, 2, 2, 3, 1, 3, 1, 1, 1, 1, 1, 1, 1], [5, 4, 5, 2, 2, 1, 1, 3, 1, 1, 1, 2, 1, 1, 1, 1], [5, 5, 2, 2, 3, 1, 1, 1, 1, 3, 1, 3, 1, 1, 1, 1], [5, 4, 2, 2, 1, 1, 3, 1, 1, 2, 1, 1, 1, 2, 1, 1], [4, 4, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4], [4, 2, 2, 1, 1, 1, 1, 3, 1, 1, 1, 2, 1, 1, 1, 4]], '11': [[4, 2, 2, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4], [4, 2, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 4], [2, 2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4], [5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4], [1, 1, 1, 2, 1, 1, 3, 1, 1, 1, 1, 2, 1, 4, 4, 4], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4], [1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]], '12': [[5, 5, 5, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2], [5, 5, 5, 5, 5, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2], [5, 5, 5, 5, 5, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2], [5, 5, 5, 5, 4, 4, 5, 2, 2, 2, 2, 2, 2, 2, 2, 2], [3, 4, 4, 5, 5, 5, 5, 5, 2, 2, 2, 2, 2, 2, 2, 2], [4, 4, 4, 3, 4, 5, 4, 5, 4, 2, 2, 2, 2, 2, 2, 2], [5, 4, 3, 5, 3, 3, 5, 5, 5, 5, 2, 2, 2, 2, 2, 2], [3, 5, 4, 3, 4, 4, 5, 3, 4, 4, 2, 2, 2, 2, 2, 2]], '13': [[4, 5, 5, 5, 5, 4, 4, 5, 3, 3, 2, 2, 2, 2, 2, 2], [4, 5, 4, 5, 5, 5, 5, 3, 3, 4, 4, 2, 2, 2, 2, 2], [5, 4, 5, 3, 4, 3, 3, 4, 4, 3, 5, 2, 2, 2, 2, 2], [4, 4, 4, 3, 4, 3, 3, 5, 3, 5, 4, 5, 2, 2, 2, 2], [3, 4, 3, 4, 5, 4, 4, 3, 4, 4, 4, 3, 4, 2, 3, 4], [5, 4, 4, 4, 4, 4, 4, 3, 4, 3, 5, 4, 4, 3, 4, 4], [5, 5, 5, 4, 5, 3, 4, 3, 4, 3, 3, 2, 4, 3, 4, 5], [4, 5, 3, 4, 5, 5, 3, 5, 4, 4, 3, 5, 1, 1, 1, 5]], '14': [[5, 4, 4, 5, 4, 4, 5, 4, 4, 4, 4, 5, 5, 5, 5, 5], [3, 4, 5, 3, 4, 5, 3, 3, 3, 3, 3, 3, 3, 4, 4, 2], [4, 4, 5, 4, 5, 3, 4, 3, 3, 4, 4, 5, 5, 5, 5, 2], [4, 5, 5, 4, 5, 5, 3, 5, 3, 3, 5, 5, 4, 4, 3, 3], [5, 3, 3, 4, 5, 5, 3, 5, 3, 4, 5, 3, 3, 2, 2, 2], [2, 4, 4, 3, 4, 3, 4, 5, 3, 5, 3, 3, 5, 2, 2, 2], [4, 5, 5, 3, 5, 4, 4, 3, 4, 4, 3, 5, 2, 2, 2, 2], [1, 4, 3, 1, 3, 4, 4, 5, 5, 5, 2, 3, 2, 2, 2, 2]], '15': [[1, 4, 3, 1, 4, 5, 5, 5, 5, 5, 2, 2, 2, 2, 2, 2], [1, 4, 3, 1, 5, 5, 4, 3, 5, 2, 2, 2, 2, 2, 2, 2], [1, 4, 3, 1, 4, 5, 5, 5, 5, 2, 2, 2, 2, 2, 2, 2], [1, 4, 3, 1, 5, 3, 5, 5, 2, 2, 2, 2, 2, 2, 2, 2], [4, 5, 5, 5, 5, 5, 5, 2, 2, 2, 2, 2, 2, 2, 2, 2], [5, 5, 5, 5, 4, 5, 5, 3, 4, 4, 3, 4, 2, 2, 2, 2], [5, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 3, 1, 2, 2, 2], [5, 5, 2, 5, 5, 5, 5, 5, 4, 2, 1, 1, 5, 2, 2, 2]]}
-
+    gameStartTime: 0
   },
   mutations: {
     addTile(state, tilePlusColor) {
@@ -2855,6 +2949,10 @@ const Game = {
     isReceivedReward(state, getters, rootState) {
       const player = state.standings.find(player => player.playerAddress === rootState.PlayerInfo.playerAddress);
       return player ? player.isReceived : false;
+    },
+
+    isInRoaster(state, getters, rootState) {
+      return state.standings.find(player => player.playerAddress === rootState.PlayerInfo.playerAddress) !== undefined;
     }
 
   }
@@ -2948,7 +3046,8 @@ const Ever = {
     operationInProgress: false,
     tokenRoot: null,
     host: null,
-    game: null
+    game: null,
+    calc: null
   },
   mutations: {
     updateApi(state, newApi) {
@@ -2977,6 +3076,10 @@ const Ever = {
 
     updateGame(state, game) {
       state.game = game;
+    },
+
+    updateCalc(state, calc) {
+      state.calc = calc;
     }
 
   },
@@ -3160,7 +3263,13 @@ const Ever = {
     }
 
   },
-  getters: {}
+  getters: {
+    calcFarming: function (state, getters, rootState) {
+      return async function (time, balance) {
+        return await EverAPI.calc.calcFarming(rootState.Ever.calc, time, balance);
+      };
+    }
+  }
 };
 ;// CONCATENATED MODULE: ./src/store/index.js
 
@@ -3335,7 +3444,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQYAAABqCAYAAABe
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = function(chunkId) {
 /******/ 			// return url for filenames based on template
-/******/ 			return "js/" + chunkId + "." + {"669":"c507fd81","909":"96ec86d0"}[chunkId] + ".js";
+/******/ 			return "js/" + chunkId + "-legacy." + {"669":"b7ffc564","909":"96ec86d0"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	}();
 /******/ 	
@@ -3596,7 +3705,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQYAAABqCAYAAABe
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [998], function() { return __webpack_require__(5505); })
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [998], function() { return __webpack_require__(8055); })
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

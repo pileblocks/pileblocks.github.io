@@ -1,5 +1,5 @@
 
-.claim-reward[data-v-7ca51c51] {
+.claim-reward[data-v-3658c082] {
     display: flex;
     grid-row: 1;
     grid-column: 1 / 3;
@@ -13,10 +13,10 @@
 }
 
 
-.text-faded[data-v-4f10b184] {
+.text-faded[data-v-b1d6ff74] {
     color: #aab0bc;
 }
-@-webkit-keyframes text-enlarge-data-v-4f10b184 {
+@-webkit-keyframes text-enlarge-data-v-b1d6ff74 {
 0% {
         font-size: 16px;
         opacity: 1;
@@ -30,7 +30,7 @@
         left: -10px;
 }
 }
-@keyframes text-enlarge-data-v-4f10b184 {
+@keyframes text-enlarge-data-v-b1d6ff74 {
 0% {
         font-size: 16px;
         opacity: 1;
@@ -44,49 +44,49 @@
         left: -10px;
 }
 }
-.reward-animation[data-v-4f10b184] {
-    -webkit-animation-name: text-enlarge-data-v-4f10b184;
-            animation-name: text-enlarge-data-v-4f10b184;
+.reward-animation[data-v-b1d6ff74] {
+    -webkit-animation-name: text-enlarge-data-v-b1d6ff74;
+            animation-name: text-enlarge-data-v-b1d6ff74;
     -webkit-animation-duration: 1s;
             animation-duration: 1s;
 }
-.reward-base[data-v-4f10b184] {
+.reward-base[data-v-b1d6ff74] {
     position: absolute;
     display: inline-block;
     top: 0;
     left: 0;
 }
-.reward-raise[data-v-4f10b184] {
+.reward-raise[data-v-b1d6ff74] {
     color: var(--green);
 }
-.reward-decline[data-v-4f10b184] {
+.reward-decline[data-v-b1d6ff74] {
     color: var(--danger);
 }
-.active[data-v-4f10b184] {
+.active[data-v-b1d6ff74] {
     background-color: var(--primary);
 }
-.high-procent[data-v-4f10b184] {
+.high-procent[data-v-b1d6ff74] {
     color: var(--green);
 }
-.low-procent[data-v-4f10b184] {
+.low-procent[data-v-b1d6ff74] {
     color: var(--danger);
 }
-.medium-procent[data-v-4f10b184] {
+.medium-procent[data-v-b1d6ff74] {
     color: var(--orange);
 }
-.gold-star[data-v-4f10b184] {
+.gold-star[data-v-b1d6ff74] {
     color: var(--gray-dark)
 }
-.reward-grid[data-v-4f10b184] {
+.reward-grid[data-v-b1d6ff74] {
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 5em 1fr;
 }
-.reward-label[data-v-4f10b184] {
+.reward-label[data-v-b1d6ff74] {
     grid-column: 1;
     grid-row: 1;
 }
-.reward-value[data-v-4f10b184] {
+.reward-value[data-v-b1d6ff74] {
     grid-column: 2;
     grid-row: 1;
 }
