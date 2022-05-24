@@ -1,5 +1,5 @@
 
-.claim-reward[data-v-3658c082] {
+.claim-reward[data-v-40d6d3d2] {
     display: flex;
     grid-row: 1;
     grid-column: 1 / 3;
@@ -8,15 +8,15 @@
 }
 
 
-.dark-box[data-v-0f53065c] {
+.dark-box[data-v-1b916f45] {
     background-color: var(--gray-dark);
 }
 
 
-.text-faded[data-v-b1d6ff74] {
+.text-faded[data-v-7da33799] {
     color: #aab0bc;
 }
-@-webkit-keyframes text-enlarge-data-v-b1d6ff74 {
+@-webkit-keyframes text-enlarge-data-v-7da33799 {
 0% {
         font-size: 16px;
         opacity: 1;
@@ -30,7 +30,7 @@
         left: -10px;
 }
 }
-@keyframes text-enlarge-data-v-b1d6ff74 {
+@keyframes text-enlarge-data-v-7da33799 {
 0% {
         font-size: 16px;
         opacity: 1;
@@ -44,49 +44,49 @@
         left: -10px;
 }
 }
-.reward-animation[data-v-b1d6ff74] {
-    -webkit-animation-name: text-enlarge-data-v-b1d6ff74;
-            animation-name: text-enlarge-data-v-b1d6ff74;
+.reward-animation[data-v-7da33799] {
+    -webkit-animation-name: text-enlarge-data-v-7da33799;
+            animation-name: text-enlarge-data-v-7da33799;
     -webkit-animation-duration: 1s;
             animation-duration: 1s;
 }
-.reward-base[data-v-b1d6ff74] {
+.reward-base[data-v-7da33799] {
     position: absolute;
     display: inline-block;
     top: 0;
     left: 0;
 }
-.reward-raise[data-v-b1d6ff74] {
+.reward-raise[data-v-7da33799] {
     color: var(--green);
 }
-.reward-decline[data-v-b1d6ff74] {
+.reward-decline[data-v-7da33799] {
     color: var(--danger);
 }
-.active[data-v-b1d6ff74] {
+.active[data-v-7da33799] {
     background-color: var(--primary);
 }
-.high-procent[data-v-b1d6ff74] {
+.high-procent[data-v-7da33799] {
     color: var(--green);
 }
-.low-procent[data-v-b1d6ff74] {
+.low-procent[data-v-7da33799] {
     color: var(--danger);
 }
-.medium-procent[data-v-b1d6ff74] {
+.medium-procent[data-v-7da33799] {
     color: var(--orange);
 }
-.gold-star[data-v-b1d6ff74] {
+.gold-star[data-v-7da33799] {
     color: var(--gray-dark)
 }
-.reward-grid[data-v-b1d6ff74] {
+.reward-grid[data-v-7da33799] {
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 5em 1fr;
 }
-.reward-label[data-v-b1d6ff74] {
+.reward-label[data-v-7da33799] {
     grid-column: 1;
     grid-row: 1;
 }
-.reward-value[data-v-b1d6ff74] {
+.reward-value[data-v-7da33799] {
     grid-column: 2;
     grid-row: 1;
 }
