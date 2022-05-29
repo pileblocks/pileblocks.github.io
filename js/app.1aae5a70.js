@@ -2887,6 +2887,12 @@ const Game = {
         playerStat.reward += playerStat.captured * (numberOfTiles * 2 - (playerStat.captured + 1 + 2 * lastTile)) * (rewardCoeff / (numberOfTiles * 2));
         lastTile += playerStat.captured;
       }
+
+      state.standings.sort(function (first, second) {
+        if (first.reward > second.reward || first.reward < second.reward) {
+          return second.reward - first.reward;
+        }
+      });
     }
 
   },
@@ -3460,7 +3466,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQYAAABqCAYAAABe
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = function(chunkId) {
 /******/ 			// return url for filenames based on template
-/******/ 			return "js/" + chunkId + "-legacy." + {"669":"985bfe34","909":"96ec86d0"}[chunkId] + ".js";
+/******/ 			return "js/" + chunkId + "." + {"669":"985bfe34","909":"96ec86d0"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	}();
 /******/ 	
