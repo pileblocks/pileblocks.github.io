@@ -6,21 +6,21 @@
 }
 
 
-#field-parts-wrapper[data-v-fc04276a] {
+#field-parts-wrapper[data-v-5b886002] {
     display: flex;
     flex-direction: column;
     min-height: 100%;
     justify-content: space-evenly;
 }
 @media (min-width: 576px) {
-#field-parts-wrapper[data-v-fc04276a] {
+#field-parts-wrapper[data-v-5b886002] {
         /*justify-content: flex-start;*/
 }
 }
-.d-grid[data-v-fc04276a] {
+.d-grid[data-v-5b886002] {
     display: grid;
 }
-.season-slogan[data-v-fc04276a] {
+.season-slogan[data-v-5b886002] {
  color: white;
 }
 
