@@ -1,0 +1,36 @@
+
+.pb-tile[data-v-0858eebe] {
+    width: 21px;
+    height: 21px;
+    background-color: #F5DE09;
+    border: 1px solid #D9C300;
+    line-height: 19px;
+    text-align: center;
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    color: #4F480C;
+    font-family: 'Arial';
+    font-size: 10pt;
+}
+.filled-tile[data-v-0858eebe] {
+    color: transparent;
+    background-image: url(/img/tile-bg.ced1af8e.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid var(--secondary);
+}
+.filled-tile-light[data-v-0858eebe] {
+    background-image: url(/img/tile-bg-light.9db78d3b.svg);
+}
+
+
+.fragment-number[data-v-13406208] {
+    color: #fefefe;
+}
+.pb-container[data-v-13406208] {
+    line-height: 0.7em;
+}
+

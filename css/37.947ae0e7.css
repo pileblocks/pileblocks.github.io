@@ -1,0 +1,32 @@
+
+.field-part[data-v-303da82a] {
+    border-width: 1px;
+    border-color: var(--primary);
+    border-style: solid;
+}
+
+
+#field-parts-wrapper[data-v-fc999b78] {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    justify-content: space-evenly;
+}
+@media (min-width: 576px) {
+#field-parts-wrapper[data-v-fc999b78] {
+        /*justify-content: flex-start;*/
+}
+}
+.d-grid[data-v-fc999b78] {
+    display: grid;
+}
+.season-slogan[data-v-fc999b78] {
+ color: white;
+}
+.field-stats[data-v-fc999b78] {
+    display: flex;
+    -moz-column-gap: 1em;
+         column-gap: 1em;
+    justify-content: space-between;
+}
+
